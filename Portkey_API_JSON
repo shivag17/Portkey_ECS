@@ -16,3 +16,18 @@
         "feedback": {"value": -1,"weight": 1}
      }
 }]
+from portkey_ai import Portkey
+
+portkey = Portkey(
+    api_key="PORTKEY_API_KEY",
+    config="my-conditional-router-config"
+)
+
+response = portkey.with_options(
+    metadata = {
+        "user_plan": "free",
+        "environment": "production",
+        "session_id": "1729"
+}).chat.completions.create(
+    messages = [{ "role": 'user', "content": 'What is 1729' }]
+)
