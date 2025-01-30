@@ -1,0 +1,18 @@
+"beforeRequestHooks": [{
+    "type": "guardrail",
+    "id": "my_solid_guardrail",
+    "checks": [{
+      "id": "default.regexMatch",
+      "parameters": {
+        "regex": "test"
+      }
+    }],
+    "deny": false,
+    "async": false,
+    "on_success": {
+        "feedback": {"value": 1,"weight": 1}
+    },
+    "on_fail": {
+        "feedback": {"value": -1,"weight": 1}
+     }
+}]
